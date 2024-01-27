@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="PT-BR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Major+Mono+Display&family=Montserrat:wght@100..900&display=swap"
+        rel="stylesheet">
+    <title>Calculadora de frete</title>
+</head>
+<script src="./Js/Info.js"></script>
+<script src="./Js/formpage.js"></script>
+<script src="./Js/calc.js"></script>
+
+<body>
+    <div class="backgroundform"></div>
+    <form class="leading">
+        <h1>Soluções pro seu negócio!</h1>
+        <h3>Preencha os dados abaixo para prosseguir</h3>
+        <input placeholder="Nome">
+        <input placeholder="Telefone">
+        <input placeholder="E-mail">
+        <button type="button" id="calcularFreteButton">QUERO CALCULAR O FRETE</button>
+    </form>
+    <div class="color-header"></div>
+    <div class="header">
+        <div>
+            <a href="https://carancontabilidade.com.br/">
+                <img src="./assets/logo.png" class="logo">
+            </a>
+        </div>
+        <div class="title-header">
+            <h1 class="title">CALCULADORA DE FRETE</h1>
+            <img src="./assets/calc.png" class="calc">
+        </div>
+    </div>
+    <div class="background">
+        <section class="container-1">
+            <h1 class="title-section">PREENCHA TODOS OS CAMPOS:</h1>
+            <div class="inputs">
+                <div class="caminhao">
+                    <h3>Valor atual do veículo*</h3>
+                    <input type="number" placeholder="R$0,00">
+                </div>
+                <div class="input-info">
+                    <div class="title-info">
+                        <h3>Veículo (ANUAL)*</h3>
+                        <!-- Ícone de informação -->
+                        <div class="info-icon" onclick="showInfo()">
+                            <span>&#9432;</span>
+                            <div class="info-popup" id="infoPopup">
+                                <p>Preencha a média de custos anuais com IPVA, Seguro, Manutenção...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="number" placeholder="R$0,00">
+                </div>
+                <div class="input-info">
+                    <div class="title-info">
+                        <h3>Mão de obra (VIAGEM)*</h3>
+                        <!-- Ícone de informação -->
+                        <div class="info-icon2" onclick="showInfo2()">
+                            <span>&#9432;</span>
+                            <div class="info-popup2" id="infoPopup2">
+                                <p>Preencha a média de custos da viagem com remuneração, hospedagem, alimentação...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="number" placeholder="R$0,00">
+                </div>
+
+                <div class="">
+                    <h3>Combustível/Pedagio*</h3>
+                    <input type="number" placeholder="R$0,00">
+                </div>
+                <div class="input-info">
+                    <div class="title-info">
+                        <h3>Custos Variáveis*</h3>
+                        <!-- Ícone de informação -->
+                        <div class="info-icon3" onclick="showInfo3()">
+                            <span>&#9432;</span>
+                            <div class="info-popup3" id="infoPopup3">
+                                <p>Preencha a média de valor estipulado para custos imprevistos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="number" placeholder="R$0,00">
+                </div>
+            </div>
+        </section>
+        <section class="container-2">
+
+            <div class="inputs-2">
+                <div class="dias-trabalhados">
+                    <h3>Km Rodados*</h3>
+                    <input type="number" placeholder="00Km">
+                </div>
+                <div class="km-rodado">
+                    <h3>Velocidade Média*</h3>
+                    <input type="number" placeholder="00Km">
+                </div>
+                <div class="reg-trib">
+                    <h2 class="title-section2">Qual o regime tributário da sua empresa?</h2>
+
+
+                    <label for="simples-nacional">Simples Nacional</label>
+                    <input type="radio" id="simples-nacional" name="tipo-tributacao" onclick="mostrarFaturamento('simples-nacional')">
+
+                    <label for="lucro-presumido">Lucro Presumido</label>
+                    <input type="radio" id="lucro-presumido" name="tipo-tributacao" onclick="mostrarFaturamento('lucro-presumido')">
+
+                    <label for="lucro-real">Lucro Real</label>
+                    <input type="radio" id="lucro-real" name="tipo-tributacao" onclick="mostrarFaturamento('lucro-real')">
+                </div>
+
+            </div>
+            <div class="faturamento">
+                <h3>Preencha o total do faturamento dos últimos 12 meses:</h3>
+                <input placeholder="R$0,00" id="input-faturamento">
+            </div>
+            <div class="resulte"></div>
+            <div class="btn">
+                <button type="button" class="btn-calc" onclick="calculate()">CALCULAR</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Copyright © Desenvolvimento Caran | Todos os direitos reservados</p>
+    </footer>
+</body>
+
+</html>
